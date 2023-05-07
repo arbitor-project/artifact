@@ -23,4 +23,4 @@ WORKDIR /root
 
 ADD tensorflow /root/arbitor
 
-WORKDIR /root/arbitor
+ADD pytorch-cifar /root/pytorch-cifar
