@@ -7,7 +7,7 @@ RUN cp -P /usr/lib/x86_64-linux-gnu/libcudnn* /usr/local/cuda/lib64
 
 ARG ROOTDIR=/root/arbitor_artifact
 
-RUN apt-get update && apt-get install -yq wget build-essential libssl-dev cmake python3-dev python3.8-venv python-is-python3 git clang++-11
+RUN apt-get update && apt-get install -yq wget build-essential libssl-dev cmake python3-dev python3.8-venv python-is-python3 git clang++-11 ninja-build
 RUN ln -s /usr/bin/clang++-11 /usr/bin/clang++
 ENV LD_LIBRARY_PATH=/usr/local/cuda/lib64
 
@@ -21,7 +21,8 @@ ENV PATH=/root/bin:$PATH
 
 WORKDIR /root
 
-ADD tensorflow /root/arbitor
+ADD arbitor /root/arbitor
 ADD native_half /root/native_half
+
 
 ADD pytorch-cifar /root/pytorch-cifar
