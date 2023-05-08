@@ -22,5 +22,6 @@ ENV PATH=/root/bin:$PATH
 WORKDIR /root
 
 ADD tensorflow /root/arbitor
+ADD native_half /root/native_half
 
 ADD pytorch-cifar /root/pytorch-cifar

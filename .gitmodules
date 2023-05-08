@@ -1,0 +1,3 @@
+[submodule "native_half"]
+	path = native_half
+	url = https://github.com/serach24/tensorflow
