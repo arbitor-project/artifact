@@ -24,5 +24,5 @@ WORKDIR /root
 ADD arbitor /root/arbitor
 ADD native_half /root/native_half
 
-
 ADD pytorch-cifar /root/pytorch-cifar
+ADD qpytorch.sh /root/qpytorch.sh
