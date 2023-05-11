@@ -188,3 +188,11 @@ for epoch in range(start_epoch, start_epoch+100):
     train(epoch)
     test(epoch)
     scheduler.step()
+
+import csv
+toAdd = ["FP16", "Accuracy"]
+with open("/root/results/validation.csv", "w", "") as f:
+    writer = csv.writer(f, delimiter=",")
+    writer.writerow(toAdd)
+    writer.writerow("QPyTorch", round(float(best_acc)), 2)
+    
