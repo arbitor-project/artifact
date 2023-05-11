@@ -7,8 +7,10 @@ RUN cp -P /usr/lib/x86_64-linux-gnu/libcudnn* /usr/local/cuda/lib64
 
 ARG ROOTDIR=/root/arbitor_artifact
 
-RUN apt-get update && apt-get install -yq wget build-essential libssl-dev cmake python3-dev python3.8-venv python-is-python3 git clang++-11 ninja-build
+RUN apt-get update && apt-get install -yq wget build-essential libssl-dev cmake python3-dev python3.8-venv gcc-8 python-is-python3 git clang++-11 ninja-build
 RUN ln -s /usr/bin/clang++-11 /usr/bin/clang++
+RUN rm /usr/bin/gcc
+RUN ln -s /usr/bin/gcc-8 /usr/bin/gcc
 ENV LD_LIBRARY_PATH=/usr/local/cuda/lib64
 
 WORKDIR /root
