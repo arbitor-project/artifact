@@ -194,5 +194,5 @@ toAdd = ["FP16", "Accuracy"]
 with open("/root/results/validation.csv", "w", "") as f:
     writer = csv.writer(f, delimiter=",")
     writer.writerow(toAdd)
-    writer.writerow("QPyTorch", round(float(best_acc)), 2)
+    writer.writerow(["QPyTorch", round(float(best_acc), 2)])
     
